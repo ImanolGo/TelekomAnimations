@@ -43,7 +43,7 @@ void CostumeManager::setup()
 
 void CostumeManager::setupImages()
 {
-    string resourceName = "Sculpteo";
+    string resourceName = "Butterfly";
     ofPoint position;
     m_costumeImage =  ofPtr<ImageVisual> (new ImageVisual(position,resourceName));
     //m_costumeImage->setHeight(700,true);

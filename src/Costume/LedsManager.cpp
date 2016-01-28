@@ -51,10 +51,11 @@ void LedsManager::setupBoundingBox()
     //m_boundingBox.setHeight(362.899 - m_boundingBox.getY());
 
     
-    m_boundingBox.setX(166.081);
-    m_boundingBox.setY(362.7);
-    m_boundingBox.setWidth(401.301 - m_boundingBox.getX());
-    m_boundingBox.setHeight(706.770 - m_boundingBox.getY());
+    m_boundingBox.setX(93.035);
+    m_boundingBox.setY(27.583);
+    m_boundingBox.setWidth(196.811- m_boundingBox.getX());
+    m_boundingBox.setHeight(288.058 - m_boundingBox.getY());
+    
 }
 
 
@@ -68,9 +69,9 @@ void LedsManager::setupLeds()
 void LedsManager::readLedsPositions()
 {
     
-    int numSections = 1;
+    int numSections = 2;
     int id = 0;
-    readLedsPositionFromGroup("A", id, numSections);
+    readLedsPositionFromGroup("Board", id, numSections);
     
 }
 

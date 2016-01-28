@@ -9,7 +9,7 @@
 #include "Led.h"
 
 
-const int Led::SIZE = 16;
+const int Led::SIZE = 30;
 
 Led::Led(const ofPoint& position, int id, int channel): BasicVisual(position, SIZE, SIZE), m_id(id), m_channel(channel)
 {
@@ -37,8 +37,8 @@ void Led::draw()
     ofSetCircleResolution(20);
     ofFill();
     
-        //ofRect(0, 0, m_width, m_height);
-        ofCircle(0, 0, m_width);
+        ofRect(0, 0, m_width, m_height);
+        //ofCircle(0, 0, m_width);
 
     ofPopStyle();
     ofPopMatrix();
