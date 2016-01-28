@@ -117,7 +117,19 @@ void LedsManager::readLedsPositionFromGroup(const string& groupName, int& id, in
             {
                 string line = buffer.getNextLine();
                 ofPoint ledPosition;
+                
+                
+                ///HACK TO PARSE TO THE NEW BUTTERFLY IMAGE!!!! CHANGE WHEN NEW IMAGES
+                    
                 if(parseLedLine(line,ledPosition)){
+                    if(i==2){
+                        ledPosition.x = ledPosition.x - 7;
+                    }
+
+                    
+                    
+                    
+                    
                     createLed(ledPosition, id, channel, leds);
                     channelSize++;
                 }

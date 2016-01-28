@@ -12,7 +12,7 @@
 
   <textures>
 
-  	<texture name="Butterfly" path="images/costume/butterfly.png"/>
+  	<texture name="Butterfly" path="images/costume/butterfly2.png"/>
     <texture name="Equalizer" path="images/general/equalizer.png"/>
 
   </textures>

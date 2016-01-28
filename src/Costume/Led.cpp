@@ -9,7 +9,7 @@
 #include "Led.h"
 
 
-const int Led::SIZE = 30;
+const int Led::SIZE = 15;
 
 Led::Led(const ofPoint& position, int id, int channel): BasicVisual(position, SIZE, SIZE), m_id(id), m_channel(channel)
 {
@@ -56,7 +56,15 @@ void Led::draw(int width, int height)
 void Led::normalize(const ofRectangle& boundingBox)
 {
     m_position.x = (m_position.x - boundingBox.getX()) / boundingBox.getWidth();
+    
+    ///HACK TO PARSE TO THE NEW BUTTERFLY IMAGE!!!! CHANGE WHEN NEW IMAGES
+    m_position.x  = ofMap(m_position.x, 0.0, 1.0, 0.466,0.864);
+
     m_position.y = (m_position.y - boundingBox.getY()) / boundingBox.getHeight();
+    
+    ///HACK TO PARSE TO THE NEW BUTTERFLY IMAGE!!!! CHANGE WHEN NEW IMAGES
+    m_position.y  = ofMap(m_position.y, 0.0, 1.0, 0.145,0.879);
+    
     m_position.y = 1 - m_position.y;
 }
 
