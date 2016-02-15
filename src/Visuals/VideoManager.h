@@ -46,6 +46,8 @@ class VideoManager: public Manager
     
         void  onNextVideoChange();
     
+        void onRecordVideoLoopsChange(bool& value);
+    
         void resetPosition();
     
         void onHueChange(float& value) {m_color.setHue(value);}
@@ -72,6 +74,7 @@ class VideoManager: public Manager
         string          m_currentVideo;
     
         bool            m_playVideo;
+        bool            m_recordVideoLoops;
         ofRectangle     m_boundingBox;
     
         ofFbo           m_fbo;

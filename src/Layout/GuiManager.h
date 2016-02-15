@@ -92,6 +92,7 @@ private:
     ofParameterGroup    m_parametersLayout;
     
     ofxButton           m_nextVideo;
+    ofParameter<bool>   m_recordVideoLoops;
     
     ofParameter<float>    m_audioLevel;
     ofxButton             m_nextAudio;

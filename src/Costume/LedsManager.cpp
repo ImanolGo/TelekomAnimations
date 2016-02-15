@@ -50,11 +50,15 @@ void LedsManager::setupBoundingBox()
     //m_boundingBox.setWidth(604.001 - m_boundingBox.getX());
     //m_boundingBox.setHeight(362.899 - m_boundingBox.getY());
 
+    int xmin = 93.032;
+    int ymin = 55.909;
+    int xmax = 398.985;
+    int ymax = 299.574;
     
-    m_boundingBox.setX(93.035);
-    m_boundingBox.setY(27.583);
-    m_boundingBox.setWidth(196.811- m_boundingBox.getX());
-    m_boundingBox.setHeight(288.058 - m_boundingBox.getY());
+    m_boundingBox.setX(xmin);
+    m_boundingBox.setY(ymin);
+    m_boundingBox.setWidth(xmax - m_boundingBox.getX());
+    m_boundingBox.setHeight(ymax - m_boundingBox.getY());
     
 }
 
@@ -71,7 +75,10 @@ void LedsManager::readLedsPositions()
     
     int numSections = 2;
     int id = 0;
-    readLedsPositionFromGroup("Board", id, numSections);
+    readLedsPositionFromGroup("F", id, numSections);
+    
+    id = 0;
+    readLedsPositionFromGroup("M", id, numSections);
     
 }
 
@@ -117,19 +124,8 @@ void LedsManager::readLedsPositionFromGroup(const string& groupName, int& id, in
             {
                 string line = buffer.getNextLine();
                 ofPoint ledPosition;
-                
-                
-                ///HACK TO PARSE TO THE NEW BUTTERFLY IMAGE!!!! CHANGE WHEN NEW IMAGES
                     
                 if(parseLedLine(line,ledPosition)){
-                    if(i==2){
-                        ledPosition.x = ledPosition.x - 7;
-                    }
-
-                    
-                    
-                    
-                    
                     createLed(ledPosition, id, channel, leds);
                     channelSize++;
                 }
@@ -159,7 +155,7 @@ void LedsManager::createLed(const ofPoint& position, int& id, int channel, LedVe
     
     id++;
     
-    //ofLogNotice() <<"LedsManager::createLed -> id " << led->getId() << ", channel = "  << led->getChannel()  << ", x = "  << led->getPosition().x << ", y = "  << led->getPosition().y << ", z = " << led->getPosition().z ;
+    ofLogNotice() <<"LedsManager::createLed -> id " << led->getId() << ", channel = "  << led->getChannel()  << ", x = "  << led->getPosition().x << ", y = "  << led->getPosition().y << ", z = " << led->getPosition().z ;
 }
 
 bool LedsManager::parseLedLine(string& line, ofPoint& position)

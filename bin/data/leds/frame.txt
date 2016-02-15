@@ -1,0 +1,6 @@
+boards
+
+int xmin = 93.032;
+int ymin = 55.909;
+int xmax = 398.985;
+int ymax = 299.574;
